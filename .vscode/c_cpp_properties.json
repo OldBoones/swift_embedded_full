@@ -6,8 +6,11 @@
                 "${workspaceFolder}/**", 
                 "/Users/hr/esp/v5.5.1/**",
                 "/Users/hr/esp/v5.5.1/esp-idf/components/**", 
+                "/Users/hr/esp/v5.5.1/esp-idf/components/freertos/**",
+                "/Users/hr/esp/v5.5.1/esp-idf/tools/**",
                 "/Users/hr/.espressif/tools/**",
-                "/Users/hr/esp/v5.5.1/esp-idf/tools/**"
+                "/Users/hr/esp/v5.5.1/esp-idf/tools/**", 
+                "/Users/hr/esp/v5.5.1/esp-idf/components/newlib/platform_include/**"
             ],
             "defines": [],
             "cStandard": "c17",
