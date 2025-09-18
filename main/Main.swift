@@ -14,7 +14,7 @@
 func main() {
   print("Hello from Swift on ESP32-C6!")
 
-  var pin15 = GPIO(pin: 15, direction: .output)
+  let pin15 = GPIO(pin: 15, direction: .output)
   pin15.write(true)
 
 

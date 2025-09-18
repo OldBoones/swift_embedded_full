@@ -5,14 +5,12 @@
             "includePath": [
                 "${workspaceFolder}/**", 
                 "/Users/hr/esp/v5.5.1/**",
-                "/Users/hr/esp/v5.5.1/esp-idf/components/**", 
-                "/Users/hr/esp/v5.5.1/esp-idf/components/freertos/**",
-                "/Users/hr/esp/v5.5.1/esp-idf/tools/**",
-                "/Users/hr/.espressif/tools/**",
-                "/Users/hr/esp/v5.5.1/esp-idf/tools/**", 
-                "/Users/hr/esp/v5.5.1/esp-idf/components/newlib/platform_include/**"
+                //"/Users/hr/esp/v5.5.1/esp-idf/components/**", 
+                "/Users/hr/.espressif/**",
+                "/Users/hr/esp/v5.5.1/esp-idf/tools/**"
+                //"/Users/hr/esp/v5.5.1/esp-idf/components/newlib/platform_include/**"
             ],
-            "defines": [],
+            "compilerPath": "/Users/hr/.swiftly/bin/clang",
             "cStandard": "c17",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64"
