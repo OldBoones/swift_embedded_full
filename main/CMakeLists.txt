@@ -71,6 +71,26 @@ target_sources(${COMPONENT_LIB}
     Led.swift
 )
 
+# Alle Swift-Dateien im aktuellen und Unterordnern automatisch einbinden
+file(GLOB_RECURSE SWIFT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/**/*.swift")
+# Alle C-Dateien im aktuellen und Unterordnern automatisch einbinden
+file(GLOB_RECURSE C_SOURCES "${CMAKE_CURRENT_LIST_DIR}/**/*.c")
+# Alle Header für den Include-Pfad (optional, für IDEs)
+file(GLOB_RECURSE C_HEADERS "${CMAKE_CURRENT_LIST_DIR}/**/*.h")
+
+target_sources(${COMPONENT_LIB}
+    PRIVATE
+    ${SWIFT_SOURCES}
+    ${C_SOURCES}
+)
+
+target_include_directories(${COMPONENT_LIB}
+    PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}
+    # Optional: alle Unterordner mit Headern
+    $<TARGET_PROPERTY:${COMPONENT_LIB},SOURCE_DIR>
+)
+
 add_custom_command(
     TARGET ${COMPONENT_LIB}
     POST_BUILD
