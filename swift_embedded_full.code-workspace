@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"freertosconfig.h": "c",
+			"freertosconfig_arch.h": "c",
+			"xtensa_config.h": "c",
+			"reent.h": "c"
+		}
+	}
+}

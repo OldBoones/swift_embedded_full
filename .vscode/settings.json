@@ -1,0 +1,11 @@
+{
+  "idf.openOcdConfigs": [
+    "board/esp32c6-lpcore-builtin.cfg"
+  ],
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32c6"
+  },
+  "idf.swiftCompilerPath": "/Users/hr/.swiftly/bin/swift",
+  "idf.flashType": "UART",
+  "C_Cpp.default.compilerPath": "/Users/hr/.swiftly/bin/clang"
+}
