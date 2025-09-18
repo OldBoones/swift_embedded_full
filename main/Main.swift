@@ -14,12 +14,16 @@
 func main() {
   print("Hello from Swift on ESP32-C6!")
 
+  let pin15 = GPIO(pin: 15, direction: .output)
+  pin15.write(true)
+
+
   var ledValue: Bool = false
   let blinkDelayMs: UInt32 = 500
   let led = Led(gpioPin: 8)
 
   while true {
-    
+    pin15.write(!pin15.read())
     led.setLed(value: ledValue)
     ledValue.toggle()  // Toggle the boolean value
     vTaskDelay(blinkDelayMs / (1000 / UInt32(configTICK_RATE_HZ)))
