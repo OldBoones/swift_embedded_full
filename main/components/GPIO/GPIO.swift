@@ -23,16 +23,7 @@ public enum GPIOInterrupt {
 // Hauptschnittstelle für GPIO-Steuerung in Swift
 
 
-@_exported import struct Foundation.Data
-@_exported import class Foundation.NSObject
-// Importiere die lokalen Enums
-
-
-// Importiere die C-Symbole aus dem Bridging Header
-// (Der Import erfolgt implizit über BridgingHeader.h, ggf. Modulname anpassen)
-
-
-import Foundation
+// Keine Foundation-Importe nötig für Embedded Swift
 
 public class GPIO {
     public let pin: UInt32
@@ -47,10 +38,6 @@ public class GPIO {
         self.pull = pull
         self.interrupt = interrupt
         configure()
-    }
-
-    public convenience init(pin: UInt32, direction: GPIODirection) {
-        self.init(pin: pin, direction: direction, pull: .none, interrupt: .none)
     }
 
     // MARK: - Konfiguration
@@ -71,23 +58,20 @@ public class GPIO {
 
     // MARK: - Lesen/Schreiben
     public func write(_ value: Bool) {
-    // gpio_set_level(pin, value ? 1 : 0) // C-Bindung prüfen
+        // gpio_set_level(pin, value ? 1 : 0) // C-Bindung prüfen
+        // Hier sollte die C-Bindung für Embedded Swift eingebunden werden
     }
 
     public func read() -> Bool {
-    // return gpio_get_level(pin) != 0 // C-Bindung prüfen
-    return false
+        // return gpio_get_level(pin) != 0 // C-Bindung prüfen
+        // Hier sollte die C-Bindung für Embedded Swift eingebunden werden
+        return false
     }
 
     // MARK: - Private Hilfsfunktionen
     private func configure() {
-    // var config = gpio_config_t()
-    // config.pin_bit_mask = 1 << pin
-    // config.mode = toGPIOMode(direction)
-    // config.pull_up_en = (pull == .up) ? 1 : 0
-    // config.pull_down_en = (pull == .down) ? 1 : 0
-    // config.intr_type = toGPIOIntrType(interrupt)
-    // gpio_config(&config)
+        // Hier sollte die C-Bindung für Embedded Swift eingebunden werden
+        // z.B. Konfiguration des Pins über C-API
     }
 
     // private func toGPIOMode(_ direction: GPIODirection) -> gpio_mode_t {

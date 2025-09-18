@@ -65,11 +65,14 @@ set(CMAKE_Swift_COMPILATION_MODE wholemodule)
 enable_language(Swift)
 
 # List of Swift source files to build.
-target_sources(${COMPONENT_LIB}
-    PRIVATE
-    Main.swift
-    Led.swift
-)
+# target_sources(${COMPONENT_LIB}
+#     PRIVATE
+#     Main.swift
+#     Led.swift
+# )
+
+file(GLOB_RECURSE SWIFT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/*.swift")
+target_sources(${COMPONENT_LIB} PRIVATE ${SWIFT_SOURCES})
 
 add_custom_command(
     TARGET ${COMPONENT_LIB}
