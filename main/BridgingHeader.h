@@ -16,3 +16,8 @@
 #include "freertos/task.h"
 #include "driver/gpio.h"
 #include "sdkconfig.h"
+
+#include "esp_log.h"
+#include "esp_system.h"
+
+#include "components/logging/LoggingBridge.h"
