@@ -20,4 +20,4 @@
 #include "esp_log.h"
 #include "esp_system.h"
 
-#include "components/logging/LoggingBridge.h"
+#include "komponenten/mcu.logging/LoggingBridge.h"

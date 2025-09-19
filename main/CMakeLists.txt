@@ -91,13 +91,6 @@ target_include_directories(${COMPONENT_LIB}
     $<TARGET_PROPERTY:${COMPONENT_LIB},SOURCE_DIR>
 )
 
-target_include_directories(${COMPONENT_LIB}
-    PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}
-    # Optional: alle Unterordner mit Headern
-    $<TARGET_PROPERTY:${COMPONENT_LIB},SOURCE_DIR>
-)
-
 add_custom_command(
     TARGET ${COMPONENT_LIB}
     POST_BUILD
