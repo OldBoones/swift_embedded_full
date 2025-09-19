@@ -1,6 +1,6 @@
 # Register the app as an IDF component
 idf_component_register(
-    SRCS /dev/null # We don't have any C++ sources
+    SRCS Main.swift
     PRIV_INCLUDE_DIRS "."
 )
 
@@ -65,11 +65,31 @@ set(CMAKE_Swift_COMPILATION_MODE wholemodule)
 enable_language(Swift)
 
 # List of Swift source files to build.
-# target_sources(${COMPONENT_LIB}
-#     PRIVATE
-#     Main.swift
-#     Led.swift
-# )
+ target_sources(${COMPONENT_LIB}
+     PRIVATE
+     Main.swift
+     Led.swift
+ )
+
+# Alle Swift-Dateien im aktuellen und Unterordnern automatisch einbinden
+file(GLOB_RECURSE SWIFT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/**/*.swift")
+# Alle C-Dateien im aktuellen und Unterordnern automatisch einbinden
+file(GLOB_RECURSE C_SOURCES "${CMAKE_CURRENT_LIST_DIR}/**/*.c")
+# Alle Header für den Include-Pfad (optional, für IDEs)
+file(GLOB_RECURSE C_HEADERS "${CMAKE_CURRENT_LIST_DIR}/**/*.h")
+
+target_sources(${COMPONENT_LIB}
+    PRIVATE
+    ${SWIFT_SOURCES}
+    ${C_SOURCES}
+)
+
+target_include_directories(${COMPONENT_LIB}
+    PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}
+    # Optional: alle Unterordner mit Headern
+    $<TARGET_PROPERTY:${COMPONENT_LIB},SOURCE_DIR>
+)
 
 # Alle Swift-Dateien im aktuellen und Unterordnern automatisch einbinden
 file(GLOB_RECURSE SWIFT_SOURCES "${CMAKE_CURRENT_LIST_DIR}/**/*.swift")
