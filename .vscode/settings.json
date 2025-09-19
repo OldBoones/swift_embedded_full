@@ -1,6 +1,6 @@
 {
   "idf.openOcdConfigs": [
-    "board/esp32c6-lpcore-builtin.cfg"
+    "board/esp32s3-builtin.cfg"
   ],
   "idf.customExtraVars": {
     "IDF_TARGET": "esp32c6"
