@@ -1,11 +1,17 @@
 {
   "idf.openOcdConfigs": [
-    "board/esp32c6-lpcore-builtin.cfg"
+    "board/esp32s3-builtin.cfg"
   ],
   "idf.customExtraVars": {
     "IDF_TARGET": "esp32c6"
   },
-  "idf.swiftCompilerPath": "/Users/hr/.swiftly/bin/swift",
-  "idf.flashType": "UART",
-  "C_Cpp.default.compilerPath": "/Users/hr/.swiftly/bin/clang"
+  "clangd.path": "/Users/hr/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=/Users/hr/.espressif/tools/riscv32-esp-elf/esp-14.2.0_20241119/riscv32-esp-elf/bin/riscv32-esp-elf-gcc",
+    "--compile-commands-dir=/Users/hr/Documents/Embedded/swift_embedded/swift_embedded_full/build"
+  ],
+  "idf.espIdfPath": "/Users/hr/esp/v5.5.1/esp-idf",
+  "idf.toolsPath": "/Users/hr/.espressif",
+  "idf.pythonInstallPath": "/opt/homebrew/bin/python3"
 }

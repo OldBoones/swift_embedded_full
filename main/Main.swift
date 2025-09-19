@@ -17,7 +17,6 @@ func main() {
   let pin15 = GPIO(pin: 15, direction: .output)
   pin15.write(true)
 
-
   var ledValue: Bool = false
   let blinkDelayMs: UInt32 = 500
   let led = Led(gpioPin: 8)
