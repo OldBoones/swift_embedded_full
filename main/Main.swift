@@ -20,8 +20,7 @@ func main() {
   pin15.write(high15)
   vTaskDelay(blinkDelayMs * 10 / (1000 / UInt32(configTICK_RATE_HZ)))
   log("where is my log?", .error)
-  //var ledValue: Bool = false
-  //let led = Led(gpioPin: 8)
+
   pin15.write(!high15)
   vTaskDelay(blinkDelayMs * 10 / (1000 / UInt32(configTICK_RATE_HZ)))
   log("starting main loop", .info)
@@ -29,9 +28,7 @@ func main() {
     high15.toggle()
     pin15.write(high15)
     log ("Toggling pin 15 to \(high15)", .warn)
-    //led.setLed(value: ledValue)
-    //ledValue.toggle()  // Toggle the boolean value
-    vTaskDelay(blinkDelayMs / (500 / UInt32(configTICK_RATE_HZ)))
-    //log("Nee echt, wieder eine Schleife durchlaufen", level: .debug)
+
+    wait(ms: 1000)
   }
 }
