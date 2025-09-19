@@ -7,5 +7,6 @@
   },
   "idf.swiftCompilerPath": "/Users/hr/.swiftly/bin/swift",
   "idf.flashType": "UART",
-  "C_Cpp.default.compilerPath": "/Users/hr/.swiftly/bin/clang"
+  "C_Cpp.default.compilerPath": "/Users/hr/.swiftly/bin/clang",
+  "idf.port": "/dev/tty.usbmodem1101"
 }
