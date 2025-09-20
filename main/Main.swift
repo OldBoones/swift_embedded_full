@@ -31,7 +31,7 @@ func main() {
     high15.toggle()
     pin15.write(high15)
     log ("Toggling pin 15 to \(high15)", .warn)
-
+    ledStrip.setMessageLong(msg: ":::::", color: .darkRandom, stepDuration: 100, refresh: .onUpdate, repeats: 1)
     wait(1000)
   }
 }
