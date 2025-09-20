@@ -1,0 +1,6 @@
+#include "led_strip_types.h"
+
+const led_color_component_format_t LED_STRIP_COLOR_COMPONENT_FMT_GRB_CONST = LED_STRIP_COLOR_COMPONENT_FMT_GRB;
+const led_color_component_format_t LED_STRIP_COLOR_COMPONENT_FMT_RGB_CONST = LED_STRIP_COLOR_COMPONENT_FMT_RGB;
+const led_color_component_format_t LED_STRIP_COLOR_COMPONENT_FMT_GRBW_CONST = LED_STRIP_COLOR_COMPONENT_FMT_GRBW;
+const led_color_component_format_t LED_STRIP_COLOR_COMPONENT_FMT_RGBW_CONST = LED_STRIP_COLOR_COMPONENT_FMT_RGBW;

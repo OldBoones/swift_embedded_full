@@ -4,10 +4,8 @@
 @_silgen_name("esp_timer_get_time")
 func esp_timer_get_time() -> Int64
 
-/// Globale wait-Funktion, die MCU.Time.wait aufruft
-@inline(__always)
-public func wait(ms: UInt64, debug: Bool = false) {
-    MCU.Time.wait(ms: ms, debug: debug)
+func wait(_ duration: UInt64, debug: Bool = false) {
+    MCU.Time.wait(ms: duration, debug: debug)
 }
 
 extension MCU {
@@ -22,15 +20,15 @@ extension MCU {
         }
 
         /// Wartet mindestens ms Millisekunden (busy-wait)
-        public static func wait(ms: UInt64, debug: Bool = false) {
+        public static func wait(ms: UInt64, debug: Bool = false, with message: String? = nil) {
             let start = uptimeMs()
+            if let msg = message {
+                log("waiting for \(ms)ms: " + msg)
+            }
             while (uptimeMs() - start) < ms {
                 // busy-wait, 1ms granularity
                 if debug {
-                    if (uptimeMs() - start) % 100 == 0 {
-                        break
-                    }
-                    log("Waiting for \(ms) ms... \(uptimeMs()-start) ms elapsed")
+                    print("Waiting for \(ms) ms... \(uptimeMs()-start) ms elapsed")
                 }
                 vTaskDelay(1)
             }

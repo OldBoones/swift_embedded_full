@@ -19,7 +19,10 @@ func main() {
   let pin15 = GPIO(pin: 15, direction: .output)
   pin15.write(high15)
   vTaskDelay(blinkDelayMs * 10 / (1000 / UInt32(configTICK_RATE_HZ)))
-  log("where is my log?", .error)
+  log("init LedStrip", .warn)
+
+  let ledStrip = LedStrip(gpioPin: 0, maxLeds: 256)
+  ledStrip.setMessageLong(msg: "Voll der Test", color: .lightRandom, stepDuration: 50)
 
   pin15.write(!high15)
   vTaskDelay(blinkDelayMs * 10 / (1000 / UInt32(configTICK_RATE_HZ)))
@@ -29,6 +32,6 @@ func main() {
     pin15.write(high15)
     log ("Toggling pin 15 to \(high15)", .warn)
 
-    wait(ms: 1000)
+    wait(1000)
   }
 }

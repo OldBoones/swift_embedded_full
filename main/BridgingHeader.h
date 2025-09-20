@@ -15,7 +15,17 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "driver/gpio.h"
+#include "driver/rmt_rx.h"
+#include "driver/rmt_tx.h"
+#include "driver/rmt_types.h"
 #include "sdkconfig.h"
+
+#include "esp_mac.h"
+
+#include "led_strip.h"
+#include "led_strip_rmt.h"
+#include "led_strip_types.h"
+#include "komponenten/LedStrip/LedStripBridge.h"
 
 #include "esp_log.h"
 #include "esp_system.h"
