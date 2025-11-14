@@ -16,7 +16,7 @@ func main() {
   var high15 = false
   print("Hello from Swift on ESP32-C6!")
 
-  let pin15 = GPIO(pin: 15, direction: .output)
+  let pin15 = GPIO(pin: MCU.Pin.USER_LED, direction: .output)
   pin15.write(high15)
   vTaskDelay(blinkDelayMs * 10 / (1000 / UInt32(configTICK_RATE_HZ)))
   log("init LedStrip", .warn)

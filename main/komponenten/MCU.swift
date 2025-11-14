@@ -1,14 +1,18 @@
 // MCU.swift
-// Statische Hilfsfunktionen für Embedded MCU
+// Pinout reference: https://wiki.seeedstudio.com/XIAO_ESP32C
+// https://www.seeedstudio.com/blog/2023/11/08/getting-started-with-the-seeed-xiao-esp32c6/
+// 
+// Created by Heiko Ritter on every now and then.
+// 
 
-
+// MCU.Pin is coded for Seeed XIAO ESP32C6 board
+// Modify the pin numbers to match your board if needed.
 public struct MCU {
     private init() {}
 
-    public enum LogLevel: Int {
-        case debug = 0
-        case info = 1
-        case warning = 2
-        case error = 3
+    struct Pin {
+        static let USER_LED: Int32 = 15
+        static let D0: Int32 = 0
+
     }
 }
