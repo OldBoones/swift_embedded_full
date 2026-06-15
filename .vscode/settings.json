@@ -19,5 +19,6 @@
   "idf.pythonBinPath": "/Users/hr/.espressif/python_env/idf5.5_py3.13_env/bin/python",
   "idf.toolsPath": "/Users/hr/.espressif",
   "idf.portWin": "",
-  "idf.adapterSpeed": "5000"
+  "idf.adapterSpeed": "5000",
+  "idf.currentSetup": "/Users/hr/esp/v5.5.1/esp-idf"
 }
